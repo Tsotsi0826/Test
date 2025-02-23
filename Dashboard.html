@@ -4,7 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .dashboard {
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tiles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .tile {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .tile h2 {
+            margin-top: 0;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="dashboard">
@@ -60,6 +137,41 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Add a new task to the To-Do List
+        function addTask() {
+            const newTaskInput = document.getElementById('new-task');
+            const taskText = newTaskInput.value.trim();
+
+            if (taskText) {
+                const todoList = document.getElementById('todo-list');
+                const newTaskItem = document.createElement('li');
+                newTaskItem.innerHTML = `<input type="checkbox"> ${taskText}`;
+                todoList.appendChild(newTaskItem);
+                newTaskInput.value = '';
+            }
+        }
+
+        // Add a new reminder
+        function addReminder() {
+            const newReminderInput = document.getElementById('new-reminder');
+            const reminderText = newReminderInput.value.trim();
+
+            if (reminderText) {
+                const remindersList = document.getElementById('reminders-list');
+                const newReminderItem = document.createElement('li');
+                newReminderItem.textContent = reminderText;
+                remindersList.appendChild(newReminderItem);
+                newReminderInput.value = '';
+            }
+        }
+
+        // Handle Contact Us form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for contacting us! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
