@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="header">
+            <h1>My Dashboard</h1>
+        </header>
+
+        <div class="tiles-container">
+            <!-- Picture Gallery Tile -->
+            <div class="tile">
+                <h2>Picture Gallery</h2>
+                <div class="gallery">
+                    <img src="https://via.placeholder.com/150" alt="Image 1">
+                    <img src="https://via.placeholder.com/150" alt="Image 2">
+                    <img src="https://via.placeholder.com/150" alt="Image 3">
+                </div>
+            </div>
+
+            <!-- To-Do List Tile -->
+            <div class="tile">
+                <h2>To-Do List</h2>
+                <ul id="todo-list">
+                    <li><input type="checkbox"> Task 1</li>
+                    <li><input type="checkbox"> Task 2</li>
+                    <li><input type="checkbox"> Task 3</li>
+                </ul>
+                <input type="text" id="new-task" placeholder="Add a new task">
+                <button onclick="addTask()">Add</button>
+            </div>
+
+            <!-- Reminders Tile -->
+            <div class="tile">
+                <h2>Reminders</h2>
+                <ul id="reminders-list">
+                    <li>Reminder 1</li>
+                    <li>Reminder 2</li>
+                    <li>Reminder 3</li>
+                </ul>
+                <input type="text" id="new-reminder" placeholder="Add a new reminder">
+                <button onclick="addReminder()">Add</button>
+            </div>
+
+            <!-- Contact Us Tile -->
+            <div class="tile">
+                <h2>Contact Us</h2>
+                <form id="contact-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <textarea id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
